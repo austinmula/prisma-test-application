@@ -2,6 +2,7 @@ const { PrismaClient } = require("@prisma/client");
 const bcrypt = require("bcrypt");
 const prisma = new PrismaClient();
 // check if user exists
+// adding a simple change
 
 exports.checkIfExists = async (email) => {
   return prisma.user.findUnique({
