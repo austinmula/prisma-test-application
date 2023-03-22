@@ -47,11 +47,11 @@ model House {
   id           Int       @id @default(autoincrement())
   house_number String
   property     Property  @relation(fields: [propertyId], references: [id], onDelete: Cascade)
-  tenant       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tenant       User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
   created_at   DateTime  @default(now())
   updated_at   DateTime  @default(now())
   propertyId   Int
-  userId       Int
+  userId       Int?
   Issue        Issue[]
   Payment      Payment[]
 }
